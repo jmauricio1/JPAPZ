@@ -1,0 +1,169 @@
+﻿@model HW6.Models.ViewModels.StockItemDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row page-header">
+    <img src="https://blog.hubspot.com/hubfs/content_marketing_banner.jpg" height="300" width="1010" />
+</div>
+
+<h2><p> StockItem Details</p></h2>
+</br>
+<div class="row" id="stockitem-description1">
+    <div class="col-md-8">
+        <h4><strong>Stock Item</strong></h4>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Name:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StockItemName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RecommendedRetailPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RecommendedRetailPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Origin)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Origin)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypicalWeightPerUnit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypicalWeightPerUnit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LeadTimeDays)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LeadTimeDays)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ValidFrom)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ValidFrom)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tags)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tags)
+            </dd>
+        </dl>
+    </div>
+            <div class="col-md-4">
+                <h4><strong>photo</strong></h4>
+                <img src="https://via.placeholder.com/250" />
+            </div>
+    </div>
+</br>
+<div class="row" id="stockitem-description2">
+
+    <h4><strong>Supplier Profile</strong></h4>
+
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SupplierName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FaxNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FaxNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.WebsiteURL) 
+            </dt>
+
+            <dd>
+               
+                <a href="mailto: @Html.DisplayFor(model => model.WebsiteURL)"> @Html.DisplayFor(model => model.WebsiteURL)</a>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Contact)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Contact)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+</br>
+
+<div class="row" id="stockitem-description3">
+    <div class="col-md-8">
+
+        <h4><strong>Sales History Summary</strong></h4>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.InvoiceLines)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InvoiceLines)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ExtendedPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExtendedPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LineProfit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LineProfit)
+            </dd>
+        </dl>
+    </div>
+    </div>
+
+</br>
+</br>
+
+    <p> <strong>@Html.ActionLink("Back to Search Bar", "Index","Home")</strong></p>
