@@ -1,0 +1,42 @@
+﻿@model Final2.Models.Astronaut
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Astronaut</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AstronautName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AstronautName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
