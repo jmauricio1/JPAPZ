@@ -1,0 +1,50 @@
+﻿@model Final1.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Video</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Encoding.Codec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encoding.Codec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FrameRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FrameRate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
