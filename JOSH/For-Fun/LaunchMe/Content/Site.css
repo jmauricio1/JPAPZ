@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#launch-section{
+    background-color: rgba(0, 148, 255, 0.17);
+    border-radius: 10px;
+    padding-bottom: 30px;
+}

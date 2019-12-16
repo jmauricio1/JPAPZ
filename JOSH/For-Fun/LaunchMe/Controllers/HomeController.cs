@@ -41,7 +41,7 @@ namespace LaunchMe.Controllers
                 launch.rocketName = (string)data[i]["rocket"]["rocket_name"];
                 launch.rocketType = (string)data[i]["rocket"]["rocket_type"];
                 launch.launchSuccess = (string)data[i]["launch_success"];
-                launch.launchFailureDetails = (string)data[i]["launch_failure_details"]["reason"];
+                //launch.launchFailureDetails = (string)data[i]["launch_failure_details"]["reason"];
 
                 launches.Add(launch);
             }
@@ -76,7 +76,7 @@ namespace LaunchMe.Controllers
             public string rocketName;
             public string rocketType;
             public string launchSuccess;
-            public string launchFailureDetails;
+            //public string launchFailureDetails;
         }
     }
 }
