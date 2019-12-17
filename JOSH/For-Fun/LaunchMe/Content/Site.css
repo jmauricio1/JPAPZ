@@ -3,6 +3,18 @@
     padding-bottom: 20px;
 }
 
+.index-header{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25vw;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    height: 25vw;
+    width: auto;
+    font-size: 100px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -24,7 +36,24 @@ textarea {
 }
 
 #launch-section{
-    background-color: rgba(0, 148, 255, 0.17);
-    border-radius: 10px;
-    padding-bottom: 30px;
+    background-color: white;
+    height: 500px;
+}
+
+.section-name{
+    text-align: center;
+}
+
+#rocket-details-section{
+    text-align: center;
+}
+
+.success-text{
+    color:green;
+    text-align: center;
+}
+
+.fail-text{
+    color: red;
+    text-align: center;
 }
