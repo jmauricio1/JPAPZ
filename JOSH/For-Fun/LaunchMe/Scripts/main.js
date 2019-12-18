@@ -50,12 +50,16 @@ function displayLaunches(data) {
         //fnum.append("Launch Number: " + data[i]["flight_number"]);fnum.appendChild(launchText);
         fnum.appendChild(launchText);
 
+        var time = document.createElement('p');
+        time.append(data[i]["launchTime"]);
+
         var missyear = document.createElement('p');
         var yearText = document.createTextNode("Year: " + data[i]["launchYear"]);
         missyear.append(yearText);
 
         var rocketInfoHeader = document.createElement('h3');
         var headerInfo = document.createTextNode("Rocket Information");
+        rocketInfoHeader.className = "rocket-info-header";
         rocketInfoHeader.append(headerInfo);
 
         var rockname = document.createElement('p');
@@ -68,6 +72,7 @@ function displayLaunches(data) {
         section.appendChild(missname);
         section.appendChild(success);
         section.appendChild(fnum);
+        section.appendChild(time);
         section.appendChild(missyear);
         section.appendChild(rocketInfoHeader);
         section.appendChild(rockname);

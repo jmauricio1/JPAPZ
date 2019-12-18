@@ -21,27 +21,20 @@ namespace LaunchMe.Controllers
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
 
             JArray data = JArray.Parse(json);
-            List<Launch> launches= new List<Launch>();
+            List<Launch> launches = new List<Launch>();
 
-            for(int i = 0; i < data.Count; i++)
+            for (int i = 0; i < data.Count; i++)
             {
                 Launch launch = new Launch();
 
-                /*if(String.IsNullOrEmpty((string)data[i]["flight_number"]) == true)
-                {
-                    launch.flightNum = -1;
-                }
-                else
-                {*/
-                    launch.flightNum = (int)data[i]["flight_number"];
-                //}
-
                 launch.missionName = (string)data[i]["mission_name"];
+                launch.launchSuccess = (string)data[i]["launch_success"];
+                launch.flightNum = (int)data[i]["flight_number"];
+                launch.launchTime = (string)data[i]["launch_date_utc"];
                 launch.launchYear = (int)data[i]["launch_year"];
+                
                 launch.rocketName = (string)data[i]["rocket"]["rocket_name"];
                 launch.rocketType = (string)data[i]["rocket"]["rocket_type"];
-                launch.launchSuccess = (string)data[i]["launch_success"];
-                //launch.launchFailureDetails = (string)data[i]["launch_failure_details"]["reason"];
                 launch.rocketID = (string)data[i]["rocket"]["rocket_id"];
                 launch.launchDetails = (string)data[i]["details"];
 
@@ -54,9 +47,9 @@ namespace LaunchMe.Controllers
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-/*            request.Headers.Add("Authorization", "token " + credentials);
-            request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
-            request.Accept = "application/json";*/
+            /*            request.Headers.Add("Authorization", "token " + credentials);
+                        request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
+                        request.Accept = "application/json";*/
 
             string jsonString = null;
             // TODO: You should handle exceptions here
@@ -71,16 +64,38 @@ namespace LaunchMe.Controllers
             return jsonString;
         }
 
-        public class Launch {
-            public int flightNum;
+        public class Launch
+        {
+            //Launch Information
             public string missionName;
+            public string launchSuccess;
+            public int flightNum;
+            public string launchTime;
             public int launchYear;
+
+            //Rocket Information
             public string rocketName;
             public string rocketType;
-            public string launchSuccess;
-            //public string launchFailureDetails;
             public string rocketID;
             public string launchDetails;
         }
+
+        /*
+    * Cool Information to add
+    * Flight number
+    * missions name
+    * launch year
+    * launch time
+    * launch success
+    * launch details
+    * missions patch
+    * article link
+    * video_link
+    * Rocket Info:
+    * - rocket name
+    * - rocket type
+    * - first stage:
+    * - second stage:
+    */
     }
 }

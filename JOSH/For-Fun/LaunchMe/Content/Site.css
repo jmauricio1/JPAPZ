@@ -37,7 +37,7 @@ textarea {
 
 #launch-section{
     background-color: white;
-    height: 500px;
+    height: 525px;
 }
 
 .section-name{
@@ -55,5 +55,9 @@ textarea {
 
 .fail-text{
     color: red;
+    text-align: center;
+}
+
+.rocket-info-header{
     text-align: center;
 }
