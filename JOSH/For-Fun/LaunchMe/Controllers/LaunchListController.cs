@@ -80,6 +80,17 @@ namespace LaunchMe.Controllers
             return Json(launches, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult Details(int? id)
+        {
+            string json = SendRequest("https://api.spacexdata.com/v3/launches");
+            JArray list = JArray.Parse(json);
+
+            Launch launchDetails = new Launch();
+
+            ViewBag.Success = true;
+            return View();
+        }
+
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);

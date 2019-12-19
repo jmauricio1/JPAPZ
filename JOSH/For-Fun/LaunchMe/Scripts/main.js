@@ -29,14 +29,25 @@ function displayList(data) {
         section.className = "col-lg-4 col-md-6 col-sm-6 col-xs-12";
 
         var missname = document.createElement('h2');
-        var missText = document.createTextNode(data[i]["missionName"]);
-        missname.append(missText);
+        var link = document.createElement('a');
+        var missText = document.createTextNode( data[i]["missionName"]);
+        //missname.append('@Html.ActionLink("' + data[i]["missionName"] + '", "Details", "LaunchList", new { id = ' + data[i]["flightNum"] + '})');
+        var newLink = '/LaunchList/Details?id=' + data[i]["flightNum"];
+        link.href = newLink;
+        link.append(missText);
+        link.className = "launch-detail-link";
+        missname.append(link);
+
         missname.className = "section-name";
 
         var success = document.createElement('h4');
-        if (data[i]["launchSuccess"].toString() == "True") {
+        if (data[i]["launchSuccess"] == "True") {
             success.append("Successful");
             success.className = "success-text";
+        }
+        else if (data[i]["launchSuccess"] == null) {
+            success.append("Not Yet Launched");
+            success.className = "null-text";
         }
         else {
             success.append("Unsuccessful");

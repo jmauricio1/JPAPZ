@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LaunchMe.Models.ViewModels.LaunchViewModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.missionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.launchSuccess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.launchTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.launchYear)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.Launches) {
+    <tr>
+        <td>
+            @Html.Display()
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
