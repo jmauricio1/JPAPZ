@@ -1,3 +1,78 @@
-﻿@if(ViewBag.Success == true){
-    <h1>Cool, It Works</h1>
-}
+﻿@model LaunchMe.Models.ViewModels.LaunchViewModel
+
+    <h1 class="launch-view-header">
+        @Html.DisplayFor(model => model.missionName)
+    </h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.launchSuccess)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.launchSuccess)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flightNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.launchTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.launchTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.launchYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.launchYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.launchDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.launchDetails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

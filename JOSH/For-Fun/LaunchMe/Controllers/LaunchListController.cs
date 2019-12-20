@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using LaunchMe.Models;
+using LaunchMe.Models.ViewModels;
 
 namespace LaunchMe.Controllers
 {
@@ -16,7 +18,7 @@ namespace LaunchMe.Controllers
         {
             return View();
         }
-        public class Launch
+        /*public class Launch
         {
             //Launch Information
             public string missionName;
@@ -30,7 +32,7 @@ namespace LaunchMe.Controllers
             public string rocketType;
             public string rocketID;
             public string launchDetails;
-        }
+        }*/
         public JsonResult ViewList()
         {
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
@@ -83,12 +85,26 @@ namespace LaunchMe.Controllers
         public ActionResult Details(int? id)
         {
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
-            JArray list = JArray.Parse(json);
+            JArray data = JArray.Parse(json);
 
             Launch launchDetails = new Launch();
 
+            id--;
+            launchDetails.missionName = (string)data[id]["mission_name"];
+            launchDetails.launchSuccess = (string)data[id]["launch_success"];
+            launchDetails.flightNum = (int)data[id]["flight_number"];
+            launchDetails.launchTime = (string)data[id]["launch_date_utc"];
+            launchDetails.launchYear = (int)data[id]["launch_year"];
+
+            launchDetails.rocketName = (string)data[id]["rocket"]["rocket_name"];
+            launchDetails.rocketType = (string)data[id]["rocket"]["rocket_type"];
+            launchDetails.rocketID = (string)data[id]["rocket"]["rocket_id"];
+            launchDetails.launchDetails = (string)data[id]["details"];
+
             ViewBag.Success = true;
-            return View();
+
+            LaunchViewModel viewModel = new LaunchViewModel(launchDetails);
+            return View(viewModel);
         }
 
         private string SendRequest(string uri)

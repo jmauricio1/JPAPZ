@@ -8,15 +8,7 @@
     });
 });
 
-/*$(document).ready(function () {
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/api/launches",
-        success: displayLaunches,
-        error: errorOnAjax
-    });
-});*/
+
 
 function displayList(data) {
     console.log(data);
