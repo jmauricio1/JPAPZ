@@ -80,5 +80,9 @@ textarea {
 
 .launch-view-header{
     text-align: center;
+    font-size: 100px;
     padding-top: 100px;
+}
+.dl-horizontal{
+    text-align: center;
 }
