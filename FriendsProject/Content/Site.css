@@ -22,3 +22,31 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.nav-pad{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#nav-title{
+    font-size: 32px;
+}
+
+#josh-title{
+    font-size: 80px;
+    color: rgba(0,0,0, .75);
+    text-decoration: underline;
+}
+#josh-img{
+    max-height: 600px;
+}
+
+footer{
+    background-color: white;
+    max-height: 20px;
+}
+
+img.sticky {
+    position: sticky;
+    top: 0;
+}

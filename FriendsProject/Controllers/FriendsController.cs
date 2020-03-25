@@ -23,5 +23,10 @@ namespace FriendsProject.Controllers
         {
             return View();
         }
+
+        public ActionResult Josh()
+        {
+            return View();
+        }
     }
 }
