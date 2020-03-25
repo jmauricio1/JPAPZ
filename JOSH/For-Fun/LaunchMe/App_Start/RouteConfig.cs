@@ -14,9 +14,15 @@ namespace LaunchMe
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "GetList",
+                url: "api/launchlist",
+                defaults: new { controller = "LaunchList", action = "ViewList" }
+            );
+
+            routes.MapRoute(
                 name: "Launches",
                 url: "api/launches",
-                defaults: new { controller = "Home", action = "ViewLaunches"}
+                defaults: new { controller = "LaunchList", action = "ViewLaunches"}
             );
 
             routes.MapRoute(
