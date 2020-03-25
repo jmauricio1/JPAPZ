@@ -1,0 +1,41 @@
+Have the function LongestWord(sen) take the sen parameter being passed and return the largest word in the string. 
+If there are two or more words that are the same length, return the first word from the string with that length. 
+Ignore punctuation and assume sen will not be empty.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string LongestWord(string sen) {
+  
+  // code goes here
+  string longest = "";
+  for(int i = 0; i < sen.length(); i++){
+    string current = "";
+    for(int j = i; j < sen.length(); j++){
+      if((sen[j] >= 65) && (sen[j] <= 90)){
+        current = current + sen[j];
+      }
+      else if((sen[j] >= 97) && (sen[j] <= 122)){
+        current = current + sen[j];
+      }
+      else if((sen[j] >= 48) && (sen[j] <= 57)){
+        current = current + sen[j];
+      }
+      else 
+        break;
+    }
+    if(current.length() > longest.length()){
+      longest = current;
+    }
+  }
+  return longest;
+}
+
+int main(void) { 
+   
+  // keep this function call here
+  cout << LongestWord(gets(stdin));
+  return 0;
+    
+}
