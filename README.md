@@ -1,5 +1,5 @@
 # Hello There!
-> Team **JPAPZ** is group of friends from different countries on a quest to learn the fundamentals of different topics in computer science.
+> Team **JPAPZ** is a group of friends from different countries on a quest to learn the fundamentals of different topics in computer science.
 > We have all met through computer science classes at Western Oregon University and this repo is one way for us to stay connected.
 > As a team that practices Agile, we work on small side projects that are tied with our interests.
 
