@@ -2,7 +2,7 @@
 
 ## Members
 * Armani Tufaga
-* Joshua Jaocb Mauricio
+* [Joshua Jaocb Mauricio](https://github.com/jmauricio1)
 * Paul Moreno
 * Sodara Y
 * Stefan Seul
@@ -21,6 +21,7 @@ Below is a list of topics that we have covered or are currently learning togethe
 	* Python
 	* SQL
 	* Java
+* Tools
 * Data Structures
 * Algorithms 
 * Agile Methods
