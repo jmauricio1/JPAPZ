@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Various Virtual Videos Viewer</h1>
+    @using (Html.BeginForm("ViewVideos", "Home", FormMethod.Get))
+    {
+
+        @Html.Label("tagName","Choose Tag: ")
+        @Html.DropDownList("tagName", new SelectList(ViewBag.TagNames), "-- Tag --", new { @class = "form-control"})
+
+    }
+  </div>
+
+<div>
+    <table id="videosList">
+
+    </table>
+
+</div>  
+
+@section scripts{
+<script type="text/javascript" src="~/Scripts/main.js"></script>
+}

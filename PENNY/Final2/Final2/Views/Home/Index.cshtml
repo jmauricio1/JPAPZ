@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>AWESOME ASTRONAUTS MISSION TRACKER</h1>
+    <div id="jumbotron">
+        <button id="createcrew">
+            @Html.ActionLink("CreateCrew", "Create", "Crews", null, new { @class = "page-scroll" })
+        </button>
+    </div>
+
+    <div id="jumbotron">
+        @using (Html.BeginForm("MissionCrew", "Home", FormMethod.Get))
+        {
+
+            @Html.Label("missionDesignation", "Choose your Mission: ")
+            @Html.DropDownList("missionDesignation", new SelectList(ViewBag.Designations), "-- Mission --", new { @class = "form-control" })
+
+        }
+    </div>
+    <div>
+
+        <table id="membersList">
+        </table>
+    </div>
+
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+    }
