@@ -4,7 +4,7 @@
 > As a team that practices Agile, we work on small side projects that are tied with our interests.
 
 ### JPAPZ Members
-* Armani Tufaga
+* [Armani Tufaga](https://github.com/atufaga)
 * [Joshua Jaocb Mauricio](https://github.com/jmauricio1)
 * Paul Moreno
 * Sodara Y
