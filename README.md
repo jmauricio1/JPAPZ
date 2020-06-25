@@ -6,9 +6,9 @@
 ### JPAPZ Members
 * [Armani Tufaga](https://github.com/atufaga)
 * [Joshua Jaocb Mauricio](https://github.com/jmauricio1)
-* Paul Moreno
-* Sodara Y
-* Stefan Seul
+* [Paul Moreno](https://github.com/PaulThePunny)
+* [Sodara Y](https://github.com/ysodara)
+* [Stefan Seul](https://github.com/GeraltofPython)
 * [Xinyan(Penny) Yang](https://github.com/Penny993131)
 * [Zaid Alsuwayyigh](https://github.com/ZeedAlsuwayyigh)
 
