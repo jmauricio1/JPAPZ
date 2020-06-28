@@ -6,6 +6,8 @@
 ### JPAPZ Members
 * [Armani Tufaga](https://github.com/atufaga)
 * [Joshua Jaocb Mauricio](https://github.com/jmauricio1)
+* [Kim You](https://github.com/kimyou7)
+* [Lijian Nian](https://github.com/lnian15)
 * [Paul Moreno](https://github.com/PaulThePunny)
 * [Sodara Y](https://github.com/ysodara)
 * [Stefan Seul](https://github.com/GeraltofPython)
