@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <h1 class="text-center">Sentence Maker</h1>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <div class="form-group row">
+                @Html.Label("Noun 1: ", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+                <div class="col-md-6">
+                    @Html.Editor("noun1")
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.Label("Verb: ", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+                <div class="col-md-6">
+                    @Html.Editor("verb")
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.Label("Noun 2: ", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+                <div class="col-md-6">
+                    @Html.Editor("noun2")
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        <h2 class="text-center">@ViewBag.Sentence1</h2>
+        <h2 class="text-center">@ViewBag.Sentence2</h2>
+    </div>
+</div>
