@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="text-center">
+        <h3>Select a City...</h3>
+        <select id="city-list">
+            <option value="new york">New York</option>
+            <option value="los angeles">Los Angeles</option>
+        </select>
+    </div>
+    <br />
+    <div class="text-center">
+        <button class="btn btn-primary" id="weather-submit"> Get Weather</button>
+    </div>
+    <hr />
+    <div id="weathers">
+
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+} 
