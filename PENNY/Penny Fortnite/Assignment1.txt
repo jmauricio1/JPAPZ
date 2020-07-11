@@ -1,0 +1,5 @@
+Feature 1 Description:
+
+Create a search bar to allow all user to type their Fortnite user name to search their stats. 
+Locate user name and give options from 2017 to 2020 and apply API, JS/Apjax to accumulate how many wins and kills 
+in each year in a graphics form so that the user could see their progresses in this game.
