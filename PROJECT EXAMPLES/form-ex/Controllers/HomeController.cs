@@ -23,7 +23,7 @@ namespace form_ex.Controllers
             //NO Helper Functions
             if (noun1 != null && verb != null && noun2!= null)
             {
-                output = "A " + noun1 + " tried to " + verb + " with a " + noun2 + ".";
+                output = "A " + noun1 + " tried to " + verb + " with the " + noun2 + ".";
             }
             else
             {
@@ -33,7 +33,7 @@ namespace form_ex.Controllers
             //With Helper Functions
             if(CheckInput(noun1) && CheckInput(verb) && CheckInput(noun2))
             {
-                other = "A " + noun1 + " tried to " + verb + " with a " + noun2 + ".";
+                other = "A " + noun1 + " tried to " + verb + " with the " + noun2 + ".";
             }
             else
             {
