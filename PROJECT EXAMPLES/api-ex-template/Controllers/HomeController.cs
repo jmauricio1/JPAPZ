@@ -10,6 +10,11 @@ namespace api_ex_template.Controllers
 {
     public class HomeController : Controller
     {
+        /*
+         * CONTROLLER NOTES:
+         *  - We will be using Meta Weather API for our data: https://www.metaweather.com/api/
+         *  - Feel free to look at their documentation to see how to pull data from their API
+         */
         public ActionResult Index()
         {
             return View();
