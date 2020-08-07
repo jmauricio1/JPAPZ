@@ -8,21 +8,18 @@ namespace SentenceForm.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(int x, int y)
         {
-            ViewBag.Message = "Your application description page.";
+            int temp = x + y;
+            ViewBag.XVal = temp;
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

@@ -15,6 +15,10 @@
     });
 });
 
+function errorOnAjax() {
+    console.log("Error on AJAX request");
+}
+
 function displayData(data) {
     $("#weathers").empty();
 
@@ -27,33 +31,38 @@ function displayData(data) {
 
     for (var i = 0; i < data.weathers.length; i++) {
         console.log("Entering loop");
-        let date = document.createElement("h3");
-        date.append(data["weathers"][i]["date"]);
-        date.className = "text-center";
-
-        let weather = document.createElement("p");
-        weather.append(data["weathers"][i]["weatherStateName"]);
-        weather.className = "text-center";
-
-        let min = document.createElement("p");
-        min.append(data["weathers"][i]["minTemp"]);
-        min.className = "text-center";
-
-        let max = document.createElement("p");
-        max.append(data["weathers"][i]["maxTemp"]);
-        max.className = "text-center";
-
         let brick = document.createElement("br");
 
-        $("#weathers").append(date);
-        $("#weathers").append(weather);
-        $("#weathers").append(min);
-        $("#weathers").append(max);
+        $("#weathers").append(createModule(data["weathers"][i]));
         $("#weathers").append(brick);
         $("#weathers").append(brick);
+
+        //data["weathers"][i]
     }
 }
 
-function errorOnAjax() {
-    console.log("Error on AJAX request");
+function createModule(object) {
+    var thing = document.createElement("div");
+    this.className = "text-center";
+
+    let date = document.createElement("h3");
+    date.append(object["date"]);
+
+    let weather = document.createElement("p");
+    weather.append(object["weatherStateName"]);
+
+    let min = document.createElement("p");
+    min.append(object["minTemp"]);
+
+    let max = document.createElement("p");
+    max.append(object["maxTemp"]);
+
+    thing.append(date);
+    thing.append(weather);
+    thing.append(min);
+    thing.append(max);
+
+    //console.log("Module Created!")
+
+    return thing;
 }

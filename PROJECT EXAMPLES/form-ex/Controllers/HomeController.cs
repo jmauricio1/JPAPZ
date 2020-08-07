@@ -45,6 +45,12 @@ namespace form_ex.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult TheMath()
+        {
+            return View();
+        }
+
         public bool CheckInput(string input)
         {
             bool valid = false;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,31 @@ namespace api_ex_template.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult GetWeather(string wid)
+        {
+            string json = SendRequest("https://www.metaweather.com/api/location/" + wid); //Gets data from the API
+            JObject data = JObject.Parse(json); //Formatting data from API into a JObject
+
+            WeatherList current = new WeatherList(); //Initializing what we are going to return
+
+            current.cityName = (string)data["title"];
+            current.locationType = (string)data["location_type"];
+
+            current.list = new List<WeatherInfo>(); //Initialized the list inside of current(WeatherList Object)
+
+            for (int i = 0; i < data["consolidated_weather"].Count(); i++)
+            {
+                WeatherInfo temp = new WeatherInfo();
+
+                temp.weatherStateName = (string)data["consolidated_weather"][i]["weather_state_name"];
+                temp.date = (string)data["consolidated_weather"][i]["applicable_date"];
+
+                current.list.Add(temp);
+            }
+
+            return Json(current, JsonRequestBehavior.AllowGet);
         }
 
         private string SendRequest(string uri)
@@ -40,4 +66,19 @@ namespace api_ex_template.Controllers
             return jsonString;
         }
     }
+
+    public class WeatherInfo
+    {
+        public string weatherStateName;
+        public string date;
+    }
+
+    public class WeatherList
+    {
+        public string cityName;
+        public string locationType;
+        public List<WeatherInfo> list;
+    }
+
+    //We are going to grab wind_direction_compass, the_temp, humidity, visibility, sun_rise, sun_set, timezone
 }
