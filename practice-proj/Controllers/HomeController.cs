@@ -20,14 +20,14 @@ namespace practice_proj.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View();      //create a pull request from Kim!
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page."; 
 
-            return View();
+            return View();      //create a pull request from Kim!
         }
     }
 }
