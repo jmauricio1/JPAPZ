@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+/* Hello Joshua!
+ */
+
 namespace practice_proj.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index()//This is penny's comment.
         {
             return View();
         }
@@ -17,14 +20,16 @@ namespace practice_proj.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View();      //create a pull request from Kim!
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page."; 
 
-            return View();
+            return View();      //create a pull request from Kim!
         }
     }
 }
+
+// I ate a Glizzy
