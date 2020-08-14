@@ -1,11 +1,13 @@
 ﻿body {
-
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url(https://i.pinimg.com/originals/26/c7/df/26c7dfef0796fd43b32bfa320e0ffe9b.jpg);    
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 15px;    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
