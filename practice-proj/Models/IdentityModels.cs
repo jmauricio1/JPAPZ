@@ -22,7 +22,7 @@ namespace practice_proj.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("JPAPZAzure", throwIfV1Schema: false)
+            : base("AzureContext", throwIfV1Schema: false)
         {
         }
 

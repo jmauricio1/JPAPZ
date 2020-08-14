@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url(https://allfont.net/allfont.css?fonts=star-jedi);
+
+body {
 
 }
 
@@ -24,4 +26,8 @@ textarea {
 
 .nav-style{
     margin-bottom: 40px;
+}
+
+.starwars-font {
+    font-family: 'Star Jedi', arial;
 }
