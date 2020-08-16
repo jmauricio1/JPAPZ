@@ -1,12 +1,10 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background-color: #121212;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 1em;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +19,70 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*---------- Home Page ----------*/
+.homepage-wrap{
+    height: 90vh;
+}
+
+.homepage {
+
+}
+
+.homepage div h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 160px;
+    font-weight: 600;
+    line-height: 80%;
+
+    border-left: 10px solid white;
+    padding-left: 20px;
+}
+
+.homepage-menu-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.home-nav-item {
+    height: 20vh;
+    margin: 10px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.column{
+    height: 90vh;
+}
+
+.vl{
+    border-left: 10px solid white;
+    height: 420px;
+}
+
+.center-vertical{
+    margin-top: 25%;
+}
+
+#mi-1{
+    background-color: #F6E8EA;
+}
+
+#mi-2 {
+    background-color: #EF626C;
+}
+
+#mi-3 {
+    background-color: #84DCCF;
+}
+
+#mi-4 {
+    background-color: #312F2F;
+}
+
+.menu-description{
+    vertical-align: bottom;
 }
