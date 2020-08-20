@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-/* Hello Joshua!
- */
-
+// Hello Joshua!
+ 
 namespace practice_proj.Controllers
 {
     public class HomeController : Controller
