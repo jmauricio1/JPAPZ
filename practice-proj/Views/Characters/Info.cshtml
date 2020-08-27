@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Info";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+	<body>
+        <div class="text-center">
+            <h3>Star Wars Characters Info</h3>
+                <select id="character-info">
+                    <option value="1">Luke Skywalker</option>
+                    <option value="2">C-3PO</option>
+                    <option value="3">R2-D2</option>
+                    <option value="4">Darth Vader</option>
+                    <option value="5">Leia Organa</option>
+                    <option value="6">Owen Lars</option>
+                    <option value="7">Beru Whitesun Lars</option>
+                    <option value="8">R5-D4</option>
+                    <option value="9">Biggs Darklighter</option>
+                    <option value="10">Obi-Wan Kenobi</option>
+                </select>
+                <button id="button" class="btn btn-primary">Search</button>
+        </div>
+        <div class="jumbotron" style="bg-black">
+            <div id="specific-character"></div>
+        </div>
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+}
+	</body>
+</html>
