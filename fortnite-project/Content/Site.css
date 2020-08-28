@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: rgb(0,0,0);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,30 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#stats-jumbo{
+    background-color: #312F2F;
+    color: white;
+}
+
+.stat-number{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#elim-number{
+    color: #84DCCF;
+}
+
+#matches-number{
+    color: #F6E8EA;
+}
+
+#kd-number{
+    color: #EF626C;
+}
+
+.white-txt{
+    color: white;
 }

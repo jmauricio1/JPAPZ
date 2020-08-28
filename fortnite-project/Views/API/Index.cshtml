@@ -3,7 +3,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container jumbotron" id="stats-jumbo">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h1 class="white-txt">Find player stats</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Epic Games Username" aria-label="Recipient's username" aria-describedby="button-addon2" id="epic-username-input" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="player-search-button">Search</button>
+                    </div>
+                </div>
+                <p><em>(Powered by Fortnite Tracker)</em></p>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="player-stats">
+
+        </div>
+    </div>
+</div>
+
 
 @section scripts{
     <script type="text/javascript" src="~/Scripts/js/api.js"></script>

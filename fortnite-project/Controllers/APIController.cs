@@ -20,13 +20,18 @@ namespace fortnite_project.Controllers
 
         public JsonResult GetPlayerStats(string username)
         {
-            string json = SendRequest("https://api.fortnitetracker.com/v1/profile/pc/Hepatitis.");
+            string json = SendRequest("https://api.fortnitetracker.com/v1/profile/pc/" + username);
             JObject data = JObject.Parse(json);
 
             Debug.WriteLine("Something");
             Debug.WriteLine(data);
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+            PlayerStats playerStats = new PlayerStats();
+            playerStats.username = username;
+            playerStats.matches = (int)data["lifeTimeStats"][7]["value"];
+            playerStats.elims = (int)data["lifeTimeStats"][10]["value"];
+            playerStats.kd = Math.Round(((double)playerStats.elims / (double)playerStats.matches), 2);
+            return Json(playerStats, JsonRequestBehavior.AllowGet);
         }
 
         private string SendRequest(string uri)
@@ -49,5 +54,13 @@ namespace fortnite_project.Controllers
             }
             return jsonString;
         }
+    }
+
+    public class PlayerStats
+    {
+        public string username;
+        public int matches;
+        public int elims;
+        public double kd;
     }
 }
