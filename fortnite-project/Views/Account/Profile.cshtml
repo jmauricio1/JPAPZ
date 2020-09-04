@@ -1,0 +1,30 @@
+﻿@model fortnite_project.Models.ProfileModels
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<section id="top-display">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>
+                @Html.DisplayFor(model => model.username)
+            </h1>
+            <h2>
+                @Html.DisplayFor(model => model.epicname)
+            </h2>
+        </div>
+        <div class="col-lg-6 stats">
+            <p>eliminations</p><h3 id="elims">@Html.DisplayFor(model => model.elims)</h3>
+
+            <h3 id="matches">
+                matches @Html.DisplayFor(model => model.matches)
+            </h3>
+
+            <h3 id="kdr">
+                kdr @Html.DisplayFor(model => model.kdr)
+            </h3>
+        </div>
+    </div>
+</section>
+

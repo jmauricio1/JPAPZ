@@ -9,6 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using fortnite_project.Models;
+using fortnite_project.DAL;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace fortnite_project.Controllers
 {
@@ -151,7 +156,7 @@ namespace fortnite_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, EpicUsername = model.EpicUsername};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -421,6 +426,48 @@ namespace fortnite_project.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        private DatabaseContext db = new DatabaseContext();
+        public new ActionResult Profile()
+        {
+            var userID = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userID);
+
+            ProfileModels profileModel = new ProfileModels();
+
+            string json = SendRequest("https://api.fortnitetracker.com/v1/profile/pc/" + user.EpicUsername);
+            JObject data = JObject.Parse(json);
+
+
+            profileModel.username = user.UserName;
+            profileModel.epicname = user.EpicUsername;
+            profileModel.matches = (int)data["lifeTimeStats"][7]["value"];
+            profileModel.elims = (int)data["lifeTimeStats"][10]["value"];
+            profileModel.kdr = Math.Round(((double)profileModel.elims / (double)profileModel.matches), 2);
+
+            return View(profileModel);
+        }
+
+        private string SendRequest(string uri)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            /*            request.Headers.Add("Authorization", "token " + credentials);
+                        request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
+                        request.Accept = "application/json";*/
+            request.Headers.Add("TRN-Api-Key", "c4c101dd-2b29-43f9-813f-051c6cda16e5");
+
+            string jsonString = null;
+            // TODO: You should handle exceptions here
+            using (WebResponse response = request.GetResponse())
+            {
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
+                jsonString = reader.ReadToEnd();
+                reader.Close();
+                stream.Close();
+            }
+            return jsonString;
         }
 
         #region Helpers

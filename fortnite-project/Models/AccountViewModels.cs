@@ -64,6 +64,9 @@ namespace fortnite_project.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Epic Username")]
+        public string EpicUsername { get; set; } 
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

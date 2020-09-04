@@ -24,28 +24,65 @@ textarea {
     max-width: 280px;
 }
 
-#stats-jumbo{
+#stats-jumbo {
     background-color: #312F2F;
     color: white;
 }
 
-.stat-number{
+.stat-number {
     font-size: 50px;
     font-weight: 600;
 }
 
-#elim-number{
+#elim-number {
     color: #84DCCF;
 }
 
-#matches-number{
+#matches-number {
     color: #F6E8EA;
 }
 
-#kd-number{
+#kd-number {
     color: #EF626C;
 }
 
-.white-txt{
+.white-txt {
     color: white;
+}
+
+
+/* ---------- User Profiles ---------- */
+#top-display {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#top-display .stats {
+    font-family: 'Russo One', sans-serif;
+    text-align: right;
+}
+
+#top-display h1{
+    font-size: 70px;
+}
+
+#top-display h2{
+    font-size: 85px;
+}
+
+#top-display h3{
+    font-size: 20vh;
+    padding: 0;
+}
+
+#top-display #elims {
+    color: #84DCCF;
+}
+
+#top-display #matches {
+    color: #F6E8EA;
+}
+
+#top-display #kdr {
+    color: #EF626C;
 }

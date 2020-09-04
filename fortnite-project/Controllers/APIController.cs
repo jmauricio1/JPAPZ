@@ -40,7 +40,7 @@ namespace fortnite_project.Controllers
             /*            request.Headers.Add("Authorization", "token " + credentials);
                         request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
                         request.Accept = "application/json";*/
-            request.Headers.Add("TRN-Api-Key", "");
+            request.Headers.Add("TRN-Api-Key", "c4c101dd-2b29-43f9-813f-051c6cda16e5");
 
             string jsonString = null;
             // TODO: You should handle exceptions here
