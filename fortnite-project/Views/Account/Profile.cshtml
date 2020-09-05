@@ -6,7 +6,7 @@
 
 <section id="top-display">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <h1>
                 @Html.DisplayFor(model => model.username)
             </h1>
@@ -14,16 +14,13 @@
                 @Html.DisplayFor(model => model.epicname)
             </h2>
         </div>
-        <div class="col-lg-6 stats">
-            <p>eliminations</p><h3 id="elims">@Html.DisplayFor(model => model.elims)</h3>
+        <div class="col-lg-8 stats">
+            <div class="stat-display">
+                <h3 class="elim-color">eliminations</h3><p id="elims" class="elim-color">@Html.DisplayFor(model => model.elims)</p>
+            </div>
 
-            <h3 id="matches">
-                matches @Html.DisplayFor(model => model.matches)
-            </h3>
-
-            <h3 id="kdr">
-                kdr @Html.DisplayFor(model => model.kdr)
-            </h3>
+                <h3 class="matches-color">matches</h3><p class="matches-color">@Html.DisplayFor(model => model.matches)</p> 
+            <h3 class="kdr-color">kdr</h3><p class="kdr-color">@Html.DisplayFor(model => model.kdr)</p>
         </div>
     </div>
 </section>

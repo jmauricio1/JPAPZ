@@ -70,19 +70,28 @@ textarea {
     font-size: 85px;
 }
 
-#top-display h3{
+#top-display p{
     font-size: 20vh;
     padding: 0;
 }
 
-#top-display #elims {
-    color: #84DCCF;
-}
+    #top-display h3{
 
-#top-display #matches {
+    }
+
+    .elim-color {
+        color: #84DCCF;
+    }
+
+
+.matches-color{
     color: #F6E8EA;
 }
 
-#top-display #kdr {
+.kdr-color {
     color: #EF626C;
+}
+
+.stat-display{
+    display: inline;
 }
