@@ -71,13 +71,24 @@ textarea {
 }
 
 #top-display p{
-    font-size: 20vh;
+    font-size: 50px;
     padding: 0;
 }
 
     #top-display h3{
-
+        font-size: 50px;
     }
+
+#top-display table{
+    width: auto;
+    margin-right: 0px;
+    margin-left: auto;
+    vertical-align: middle;
+}
+
+#top-display .desc{
+    padding-right: 20px;
+}
 
     .elim-color {
         color: #84DCCF;
@@ -90,8 +101,4 @@ textarea {
 
 .kdr-color {
     color: #EF626C;
-}
-
-.stat-display{
-    display: inline;
 }
