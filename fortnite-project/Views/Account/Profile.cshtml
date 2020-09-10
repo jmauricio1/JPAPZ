@@ -6,43 +6,33 @@
 
 <section id="top-display">
     <div class="row">
-        <div class="col-lg-4">
-            <h1>
-                @Html.DisplayFor(model => model.username)
-            </h1>
-            <h2>
-                @Html.DisplayFor(model => model.epicname)
-            </h2>
-        </div>
-        <div class="col-lg-8 stats">
-            <table>
-                <tr>
-                    <td class="desc">
-                        <h3 class="elim-color">eliminations</h3>
-                    </td>
-                    <td>
-                        <p id="elims" class="elim-color">@Html.DisplayFor(model => model.elims)</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="desc">
-                        <h3 class="matches-color">matches</h3>
-                    </td>
-                    <td>
-                        <p class="matches-color">@Html.DisplayFor(model => model.matches)</p>
-                    </td>
-                </tr>
+        <div class="col-lg-6 info">
+            <div class="display-names">
+                <h2>
+                    @Html.DisplayFor(model => model.epicname)
+                </h2>
+                <h1>
+                    @Html.DisplayFor(model => model.username)
+                </h1>
+            </div>
+            <div class="row stats">
+                <div class="col-lg-4 text-center">
 
-                <tr>
-                    <td class="desc">
-                        <h3 class="kdr-color">kdr</h3>
-                    </td>
-                    <td>
-                        <p class="kdr-color">@Html.DisplayFor(model => model.kdr)</p>
-                    </td>
-                </tr>
-            </table>
-            
+                    <p id="elims" class="elim-color">@Html.DisplayFor(model => model.elims)</p>
+                    <h3 class="elim-color">eliminations</h3>
+                </div>
+                <div class="col-lg-4 text-center middle-col">
+                    <p class="matches-color">@Html.DisplayFor(model => model.matches)</p>
+                    <h3 class="matches-color">matches</h3>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <p class="kdr-color">@Html.DisplayFor(model => model.kdr)</p>
+                    <h3 class="kdr-color">kdr</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 main">
+            @*This section is going to be used for a future user story*@
         </div>
     </div>
 </section>
