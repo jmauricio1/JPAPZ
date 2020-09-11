@@ -8,6 +8,7 @@
     <div class="row">
         <div class="col-lg-6 info">
             <div class="display-names">
+                @*@<img src=@Html.DisplayFor(model => model.image)/>*@
                 <h2>
                     @Html.DisplayFor(model => model.epicname)
                 </h2>
@@ -16,16 +17,19 @@
                 </h1>
             </div>
             <div class="row stats">
-                <div class="col-lg-4 text-center">
-
+                <div class="col-lg-3 text-center">
+                    <p id="wins" class="win-color">@Html.DisplayFor(model => model.wins)</p>
+                    <h3 class="win-color">wins</h3>
+                </div>
+                <div class="col-lg-3 text-center middle-col mid-col-left">
                     <p id="elims" class="elim-color">@Html.DisplayFor(model => model.elims)</p>
                     <h3 class="elim-color">eliminations</h3>
                 </div>
-                <div class="col-lg-4 text-center middle-col">
+                <div class="col-lg-3 text-center middle-col mid-col-right">
                     <p class="matches-color">@Html.DisplayFor(model => model.matches)</p>
                     <h3 class="matches-color">matches</h3>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-3 text-center">
                     <p class="kdr-color">@Html.DisplayFor(model => model.kdr)</p>
                     <h3 class="kdr-color">kdr</h3>
                 </div>

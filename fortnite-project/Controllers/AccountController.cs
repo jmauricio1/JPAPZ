@@ -27,7 +27,7 @@ namespace fortnite_project.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -39,9 +39,9 @@ namespace fortnite_project.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -125,7 +125,7 @@ namespace fortnite_project.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -156,12 +156,12 @@ namespace fortnite_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, EpicUsername = model.EpicUsername};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, EpicUsername = model.EpicUsername };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -442,9 +442,11 @@ namespace fortnite_project.Controllers
 
             profileModel.username = user.UserName;
             profileModel.epicname = user.EpicUsername;
+            profileModel.wins = (int)data["lifeTimeStats"][8]["value"];
             profileModel.matches = (int)data["lifeTimeStats"][7]["value"];
             profileModel.elims = (int)data["lifeTimeStats"][10]["value"];
             profileModel.kdr = Math.Round(((double)profileModel.elims / (double)profileModel.matches), 2);
+            profileModel.image = (string)data["avatar"];
 
             return View(profileModel);
         }
@@ -469,7 +471,6 @@ namespace fortnite_project.Controllers
             }
             return jsonString;
         }
-
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

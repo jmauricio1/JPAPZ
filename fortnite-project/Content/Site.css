@@ -55,6 +55,7 @@ textarea {
 #top-display {/*
     margin-left: 5vw;
     margin-right: 5vw;*/
+              margin-top: 10vh;
 }
 
 #top-display .stats {
@@ -124,14 +125,25 @@ textarea {
 }
 
 #top-display .middle-col {
-    border-left: solid 3px white;
-    border-right: solid 3px white;
+    border-left: solid 4px white;
+    border-right: solid 4px white;
+}
+
+#top-display .mid-col-left {
+    border-right: solid 2px white;
+}
+
+#top-display .mid-col-right {
+    border-left: solid 2px white;
+}
+
+.win-color {
+    color: #52f25d;
 }
 
 .elim-color {
     color: #84DCCF;
 }
-
 
 .matches-color{
     color: #F6E8EA;
