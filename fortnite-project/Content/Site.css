@@ -24,6 +24,36 @@ textarea {
     max-width: 280px;
 }
 
+/* ---------- Homepage ---------- */
+#homepage {
+    text-align: center;
+    color: white;
+}
+
+#homepage h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 150px;
+    margin-top: 25vh;
+}
+
+    #homepage h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 35px;
+        border-left: solid 4px #84DCCF;
+        border-right: solid 4px #EF626C;
+    }
+
+#homepage a {
+    margin-top: 25px;
+    background-color: #00C2CB;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+/* ---------- Player Stats API ---------- */
+
 #stats-jumbo {
     background-color: #312F2F;
     color: white;
@@ -50,18 +80,18 @@ textarea {
     color: white;
 }
 
-
 /* ---------- User Profiles ---------- */
-#top-display {/*
+
+#top-display { /*
     margin-left: 5vw;
     margin-right: 5vw;*/
-              margin-top: 10vh;
+    margin-top: 10vh;
 }
 
-#top-display .stats {
-    font-family: 'Russo One', sans-serif;
-    text-align: right;
-}
+    #top-display .stats {
+        font-family: 'Russo One', sans-serif;
+        text-align: right;
+    }
 
     #top-display h1 {
         font-size: 20px;
@@ -91,51 +121,51 @@ textarea {
         padding-bottom: 15px;
     }
 
-#top-display table{
-    width: auto;
-    margin-right: 0px;
-    margin-left: auto;
-    vertical-align: middle;
-}
+    #top-display table {
+        width: auto;
+        margin-right: 0px;
+        margin-left: auto;
+        vertical-align: middle;
+    }
 
-#top-display .jumbotron{
-    background-color: rgb(17, 17, 17);
-}
+    #top-display .jumbotron {
+        background-color: rgb(17, 17, 17);
+    }
 
-#top-display .desc{
-    padding-right: 20px;
-}
+    #top-display .desc {
+        padding-right: 20px;
+    }
 
-#top-display td{
-    line-height: 40px;
-}
+    #top-display td {
+        line-height: 40px;
+    }
 
-#top-display .info{
-    background-color: black;
-}
+    #top-display .info {
+        background-color: black;
+    }
 
-#top-display .main {
-    background-color: #312F2F;
-}
+    #top-display .main {
+        background-color: #312F2F;
+    }
 
-#top-display .display-names{
-    text-align: center;
-    margin-top: 25vh;
-    margin-bottom: 20vh;
-}
+    #top-display .display-names {
+        text-align: center;
+        margin-top: 25vh;
+        margin-bottom: 20vh;
+    }
 
-#top-display .middle-col {
-    border-left: solid 4px white;
-    border-right: solid 4px white;
-}
+    #top-display .middle-col {
+        border-left: solid 4px white;
+        border-right: solid 4px white;
+    }
 
-#top-display .mid-col-left {
-    border-right: solid 2px white;
-}
+    #top-display .mid-col-left {
+        border-right: solid 2px white;
+    }
 
-#top-display .mid-col-right {
-    border-left: solid 2px white;
-}
+    #top-display .mid-col-right {
+        border-left: solid 2px white;
+    }
 
 .win-color {
     color: #52f25d;
@@ -145,7 +175,7 @@ textarea {
     color: #84DCCF;
 }
 
-.matches-color{
+.matches-color {
     color: #F6E8EA;
 }
 
