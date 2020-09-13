@@ -1,6 +1,9 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+
     background-color: rgb(0,0,0);
 }
 
@@ -26,6 +29,11 @@ textarea {
 
 /* ---------- Homepage ---------- */
 #homepage {
+    background: url(../Content/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+
     text-align: center;
     color: white;
 }
@@ -33,7 +41,7 @@ textarea {
 #homepage h1 {
     font-family: 'Russo One', sans-serif;
     font-size: 150px;
-    margin-top: 25vh;
+    margin-top: 30vh;
 }
 
     #homepage h2 {
@@ -41,6 +49,7 @@ textarea {
         font-size: 35px;
         border-left: solid 4px #84DCCF;
         border-right: solid 4px #EF626C;
+        font-weight: 300;
     }
 
 #homepage a {
@@ -50,6 +59,11 @@ textarea {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+    
+}
+
+canvas{
+    display: block;
 }
 
 /* ---------- Player Stats API ---------- */
