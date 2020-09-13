@@ -10,7 +10,6 @@ namespace fortnite_project.DAL
     {
         public int ID { get; set; }
 
-        [Required]
         [StringLength(128)]
         public string Postee { get; set; }
 
@@ -23,7 +22,9 @@ namespace fortnite_project.DAL
         [StringLength(128)]
         public string Desc { get; set; }
 
-        public int PlatPref { get; set; }
+        [Required]
+        [StringLength(16)]
+        public string PlatPref { get; set; }
 
         [Required]
         [StringLength(16)]

@@ -81,7 +81,7 @@ CREATE TABLE [dbo].[Groups]
     [PostDate]  DATETIME            NULL,
     [Title]     NVARCHAR(64)        NOT NULL,
     [Desc]      NVARCHAR(128)       NULL,
-    [PlatPref]  INT                 NOT NULL,
+    [PlatPref]  NVARCHAR(16)        NOT NULL,
     [SkillPref] NVARCHAR(16)        NOT NULL,
     CONSTRAINT  [PK_dbo.Groups] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT  [FK_dbo.Groups_dbo.AspNetUsers_Postee] FOREIGN KEY ([Postee]) REFERENCES [dbo].[AspNetUsers] ([Id]) ON DELETE CASCADE
