@@ -27,6 +27,26 @@ textarea {
     max-width: 280px;
 }
 
+/* ---------- Navigation Bar ---------- */
+.navbar{
+    background-color: black;
+}
+
+.nav{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: rgb(125, 125, 125);
+}
+
 /* ---------- Homepage ---------- */
 #homepage {
     background: url(../Content/images/background.jpg);
