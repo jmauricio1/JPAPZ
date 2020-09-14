@@ -211,6 +211,7 @@
     <Content Include="Content\fonts\fonts.css" />
     <Content Include="Content\fonts\OFL.txt" />
     <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\group.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

@@ -4,27 +4,92 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
+<section id="group-header">
+    <h1>
+        Play with new friends.
+    </h1>
+    <h2>
+        Want to play Fortnite with others? Choose a group that is open to play with you.
+    </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="platform-label">Platform</label>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option value="Any" selected>Any</option>
+                        <option value="PC">PC</option>
+                        <option value="Playstation">Playstation</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Switch">Switch</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="region-label">Region</label>
+                    <select class="custom-select" id="inputGroupSelect02">
+                        <option value="ANY" selected>Any</option>
+                        <option value="NAW">NA - West</option>
+                        <option value="NAE">NA - East</option>
+                        <option value="BRA">Brazil</option>
+                        <option value="EU">Europe</option>
+                        <option value="ME">Middle East</option>
+                        <option value="AS">Asia</option>
+                        <option value="OCE">Oceania</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="mode-label">Mode</label>
+                    <select class="custom-select" id="inputGroupSelect03">
+                        <option value="Any" selected>Any</option>
+                        <option value="Duos">Duos</option>
+                        <option value="Squads">Squads</option>
+                        <option value="Trios">Arena Trios</option>
+                        <option value="Creative">Creative</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</section>
+<section class="container">
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-                <h3>
-                    @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername) @Html.DisplayFor(modelItem => item.PostDate)
-                </h3>
-                <p>
-                    @Html.DisplayFor(modelItem => item.PlatPref)
-                </p>
-                <p>
-                    @Html.DisplayFor(modelItem => item.SkillPref)
-                </p>
-                <p>
-                    @Html.DisplayFor(modelItem => item.Title)
-                    @Html.DisplayFor(modelItem => item.Desc)
-                </p>
+            <div class="col-lg-8 group-post">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h3>
+                            @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
+                        </h3>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <h3>
+                            @Html.DisplayFor(modelItem => item.PostDate)
+                        </h3>
+                    </div>
+                    <div class="col-lg-2 text-right">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.PlatPref)
+                        </p>
+                    </div>
+                    <div class="col-lg-2 text-right">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.SkillPref)
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        Something
+                    </div>
+                </div>
             </div>
             <div class="col-lg-2"></div>
         }
     </div>
-</div>
+</section>
