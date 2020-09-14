@@ -5,65 +5,26 @@
 }
 
 <div class="container">
-
-    <h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AspNetUser.EpicUsername)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlatPref)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SkillPref)
-            </th>
-            <th></th>
-        </tr>
-
+    <div class="row">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PostDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desc)
-                </td>
-                <td>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername) @Html.DisplayFor(modelItem => item.PostDate)
+                </h3>
+                <p>
                     @Html.DisplayFor(modelItem => item.PlatPref)
-                </td>
-                <td>
+                </p>
+                <p>
                     @Html.DisplayFor(modelItem => item.SkillPref)
-                </td>
-                <td>
-                    @*
-                        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-                    *@
-                </td>
-            </tr>
+                </p>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.Desc)
+                </p>
+            </div>
+            <div class="col-lg-2"></div>
         }
-
-    </table>
+    </div>
 </div>
