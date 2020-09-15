@@ -57,39 +57,32 @@
         </div>
     </div>
 </section>
-<section class="container">
-    <div class="row">
+<section class="container" id="group-list">
+    <div class="row groups-item">
         @foreach (var item in Model)
         {
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 group-post">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <h3>
-                            @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
-                        </h3>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <h3>
-                            @Html.DisplayFor(modelItem => item.PostDate)
-                        </h3>
-                    </div>
-                    <div class="col-lg-2 text-right">
-                        <p>
-                            @Html.DisplayFor(modelItem => item.PlatPref)
-                        </p>
-                    </div>
-                    <div class="col-lg-2 text-right">
-                        <p>
-                            @Html.DisplayFor(modelItem => item.SkillPref)
-                        </p>
-                    </div>
-                    <div class="col-lg-12">
-                        Something
-                    </div>
-                </div>
+            <div class="col-lg-4">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
+                </h3>
             </div>
-            <div class="col-lg-2"></div>
+            <div class="col-lg-4 text-left">
+
+                <h4>
+                    @*@Html.DisplayFor(modelItem => item.PostDate)*@
+                    5 minutes ago
+                </h4>
+            </div>
+            <div class="col-lg-2 text-left">
+                <p>
+                    @Html.DisplayFor(modelItem => item.PlatPref)
+                </p>
+            </div>
+            <div class="col-lg-2 text-left">
+                <p>
+                    @Html.DisplayFor(modelItem => item.SkillPref)
+                </p>
+            </div>
         }
     </div>
 </section>

@@ -52,7 +52,7 @@ textarea {
     background: url(../Content/images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 69vh;
 
     text-align: center;
     color: white;
@@ -169,6 +169,24 @@ canvas{
     border-color: black;
     border-bottom: solid 2px white;
 }
+
+#group-list{
+    margin-top: 10vh;
+}
+
+#group-list .groups-item{
+    background-color: #312F2F;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+}
+
+#group-list h3{
+    font-family: 'Russo One', sans-serif;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
 /* ---------- User Profiles ---------- */
 
 #top-display { /*
