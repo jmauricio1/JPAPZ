@@ -175,7 +175,6 @@ canvas{
 }
 
 #group-list .groups-item{
-    background-color: #312F2F;
     color: white;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 25px;
@@ -185,8 +184,29 @@ canvas{
     font-family: 'Russo One', sans-serif;
     text-align: left;
     letter-spacing: 1px;
+    margin-bottom: 0;
 }
 
+#group-list h4{
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(183, 183, 183);
+}
+
+#group-list p{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    margin-left: 0;
+    width: 90%;
+    background-color: #FFFFFF;
+    height: 1px;
+}
 /* ---------- User Profiles ---------- */
 
 #top-display { /*

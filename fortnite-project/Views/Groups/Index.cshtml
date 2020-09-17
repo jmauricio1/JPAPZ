@@ -5,7 +5,7 @@
 }
 
 <section id="group-header">
-    <h1>
+    <h1 class="fade-in">
         Play with new friends.
     </h1>
     <h2>
@@ -58,30 +58,30 @@
     </div>
 </section>
 <section class="container" id="group-list">
-    <div class="row groups-item">
+    <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-lg-4">
+            <div class="col-lg-6 groups-item">
                 <h3>
-                    @Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
+                    @Html.DisplayFor(modelItem => item.Title)
                 </h3>
-            </div>
-            <div class="col-lg-4 text-left">
-
                 <h4>
-                    @*@Html.DisplayFor(modelItem => item.PostDate)*@
-                    5 minutes ago
+                    @@@Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
                 </h4>
-            </div>
-            <div class="col-lg-2 text-left">
-                <p>
-                    @Html.DisplayFor(modelItem => item.PlatPref)
-                </p>
-            </div>
-            <div class="col-lg-2 text-left">
-                <p>
-                    @Html.DisplayFor(modelItem => item.SkillPref)
-                </p>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.PlatPref) <br />
+                            NA - West <br />
+                            Squads
+                        </p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Desc)
+                        </p>
+                    </div>
+                </div>
             </div>
         }
     </div>
