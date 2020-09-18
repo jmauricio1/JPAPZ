@@ -1,0 +1,96 @@
+﻿@model IEnumerable<fortnite_project.DAL.Group>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="group-header">
+    <h1 class="fade-in">
+        Play with new friends.
+    </h1>
+    <h2>
+        Want to play Fortnite with others? Choose a group that is open to play with you.
+    </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="platform-label">Platform</label>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option value="Any" selected>Any</option>
+                        <option value="PC">PC</option>
+                        <option value="Playstation">Playstation</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Switch">Switch</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="region-label">Region</label>
+                    <select class="custom-select" id="inputGroupSelect02">
+                        <option value="ANY" selected>Any</option>
+                        <option value="NAW">NA - West</option>
+                        <option value="NAE">NA - East</option>
+                        <option value="BRA">Brazil</option>
+                        <option value="EU">Europe</option>
+                        <option value="ME">Middle East</option>
+                        <option value="AS">Asia</option>
+                        <option value="OCE">Oceania</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01" id="mode-label">Mode</label>
+                    <select class="custom-select" id="inputGroupSelect03">
+                        <option value="Any" selected>Any</option>
+                        <option value="Duos">Duos</option>
+                        <option value="Squads">Squads</option>
+                        <option value="Trios">Arena Trios</option>
+                        <option value="Creative">Creative</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</section>
+<section class="container" id="group-list">
+    <div class="row">
+        @{
+            int current = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-6 groups-item">
+                <h3 class="color-@current">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h3>
+                <h4>
+                    @@@Html.DisplayFor(modelItem => item.AspNetUser.EpicUsername)
+                </h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.PlatPref) <br />
+                            NA - West <br />
+                            Squads
+                        </p>
+                    </div>
+                    <div class="col-lg-7">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Desc)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            current++;
+            if(current == 5)
+            {
+                current = 1;
+            }
+        }
+    </div>
+</section>

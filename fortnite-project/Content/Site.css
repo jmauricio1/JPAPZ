@@ -27,12 +27,32 @@ textarea {
     max-width: 280px;
 }
 
+/* ---------- Navigation Bar ---------- */
+.navbar{
+    background-color: black;
+}
+
+.nav{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: rgb(125, 125, 125);
+}
+
 /* ---------- Homepage ---------- */
 #homepage {
     background: url(../Content/images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 69vh;
 
     text-align: center;
     color: white;
@@ -41,7 +61,7 @@ textarea {
 #homepage h1 {
     font-family: 'Russo One', sans-serif;
     font-size: 150px;
-    margin-top: 30vh;
+    margin-top: 25vh;
 }
 
     #homepage h2 {
@@ -93,6 +113,117 @@ canvas{
 .white-txt {
     color: white;
 }
+
+/* ---------- Groups ---------- */
+#group-header {
+    background: url(../Content/images/group.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    text-align: center;
+    color: white;
+}
+
+    #group-header h1 {
+        font-family: 'Russo One', sans-serif;
+        font-size: 150px;
+        margin-top: 25vh;
+    }
+
+#group-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    border-left: solid 4px #84DCCF;
+    border-right: solid 4px #EF626C;
+    font-weight: 300;
+}
+
+#group-header .input-group-text {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+#group-header #platform-label {
+    border-bottom: solid 2px #52f25d;
+}
+
+#group-header #region-label {
+    border-bottom: solid 2px #84DCCF;
+}
+
+#group-header #mode-label {
+    border-bottom: solid 2px #EF626C;
+}
+
+#group-header .container{
+    margin-top: 50px;
+}
+
+#group-header .custom-select{
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-color: black;
+    border-bottom: solid 2px white;
+}
+
+#group-list{
+    margin-top: 10vh;
+}
+
+#group-list .groups-item{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+}
+
+#group-list h3{
+    font-family: 'Russo One', sans-serif;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+#group-list h4{
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(183, 183, 183);
+}
+
+#group-list p{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    margin-left: 0;
+    width: 90%;
+    background-color: #FFFFFF;
+    height: 1px;
+}
+
+.color-1{
+    border-bottom: solid 2px #84DCCF;
+}
+
+.color-2 {
+    border-bottom: solid 2px #52f25d;
+}
+
+.color-3 {
+    border-bottom: solid 2px #EF626C;
+}
+
+.color-4 {
+    border-bottom: solid 2px #F6e8ea;
+}
+
 
 /* ---------- User Profiles ---------- */
 

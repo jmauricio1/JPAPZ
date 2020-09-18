@@ -74,9 +74,15 @@ CREATE NONCLUSTERED INDEX [IX_UserId] ON [dbo].[AspNetUserRoles]([UserId] ASC);
 GO
 CREATE NONCLUSTERED INDEX [IX_RoleId] ON [dbo].[AspNetUserRoles]([RoleId] ASC);
 
-
-DROP TABLE [dbo].[AspNetUserRoles];
-DROP TABLE [dbo].[AspNetUserClaims];
-DROP TABLE [dbo].[AspNetUserLogins];
-DROP TABLE [dbo].[AspNetUsers];
-DROP TABLE [dbo].[AspNetRoles];
+CREATE TABLE [dbo].[Groups]
+(
+    [ID]        INT IDENTITY(1, 1)  NOT NULL,
+    [Postee]    NVARCHAR(128)       NOT NULL,
+    [PostDate]  DATETIME            NULL,
+    [Title]     NVARCHAR(64)        NOT NULL,
+    [Desc]      NVARCHAR(128)       NULL,
+    [PlatPref]  NVARCHAR(16)        NOT NULL,
+    [SkillPref] NVARCHAR(16)        NOT NULL,
+    CONSTRAINT  [PK_dbo.Groups] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT  [FK_dbo.Groups_dbo.AspNetUsers_Postee] FOREIGN KEY ([Postee]) REFERENCES [dbo].[AspNetUsers] ([Id]) ON DELETE CASCADE
+);
