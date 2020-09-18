@@ -59,10 +59,13 @@
 </section>
 <section class="container" id="group-list">
     <div class="row">
+        @{
+            int current = 1;
+        }
         @foreach (var item in Model)
         {
             <div class="col-lg-6 groups-item">
-                <h3>
+                <h3 class="color-@current">
                     @Html.DisplayFor(modelItem => item.Title)
                 </h3>
                 <h4>
@@ -83,6 +86,11 @@
                     </div>
                 </div>
             </div>
+            current++;
+            if(current == 5)
+            {
+                current = 1;
+            }
         }
     </div>
 </section>
