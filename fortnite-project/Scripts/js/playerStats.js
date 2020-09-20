@@ -1,6 +1,13 @@
-﻿const data = [(1, 1), (2, 2), (10, 10), (20, 20), (30, 30), (40, 40)]
+﻿$(document).ready(function () {
+    GetPlayerStats();
+    DisplayStatGraph();
+});
 
-$(document).ready(function () {
+function GetPlayerStats() {
+
+}
+
+function displayStatGraph() {
     $('#stat-graph').empty();
 
     var trace1 = {
@@ -8,7 +15,10 @@ $(document).ready(function () {
         y: [200, 100, 250],
         type: 'bar',
         name: 'matches',
-        marker: { size: 10 }
+        marker: {
+            size: 10,
+            color: '#F6E8EA'
+        }
     };
 
     var trace2 = {
@@ -16,7 +26,10 @@ $(document).ready(function () {
         y: [143, 123, 331],
         type: 'bar',
         name: 'eliminations',
-        marker: { size: 10 }
+        marker: {
+            size: 10,
+            color: '#84DCCF'
+        }
     };
 
     var trace3 = {
@@ -24,26 +37,29 @@ $(document).ready(function () {
         y: [10, 20, 30],
         type: 'bar',
         name: 'wins',
-        marker: { size: 10 }
+        marker: {
+            size: 10,
+            color: '#52f25d'
+        }
     };
 
     var layout = {
         barmode: 'stack',
+        bg_color: '#000',
+        paper_bgcolor: '#000',
+        plot_bgcolor: '#000',
         title: {
             text: "Player Stats",
             font: { size: 24 },
         },
         xaxis: {
             title: {
-                text: 'Game Mode',
+                text: '',
                 font: { size: 18 }
             },
         },
         yaxis: {
-            title: {
-                text: '',
-                font: { size: 18 }
-            }
+            visible: false
         }
     };
 
@@ -51,4 +67,4 @@ $(document).ready(function () {
 
     Plotly.newPlot('stat-graph', data, layout);
     console.log("Plotted Graph");
-});
+}
