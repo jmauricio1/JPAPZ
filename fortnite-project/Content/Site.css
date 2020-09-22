@@ -386,3 +386,17 @@ hr {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* ---------- Register Page ---------- */
+
+#register-form h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 50px;
+    margin-top: 10vh;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+}
+
+#register-button {
+    width: 150px;
+}
