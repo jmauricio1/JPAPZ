@@ -7,7 +7,7 @@ function GetPlayerStats() {
 
 }
 
-function displayStatGraph() {
+function DisplayStatGraph() {
     $('#stat-graph').empty();
 
     var trace1 = {
@@ -48,10 +48,6 @@ function displayStatGraph() {
         bg_color: '#000',
         paper_bgcolor: '#000',
         plot_bgcolor: '#000',
-        title: {
-            text: "Player Stats",
-            font: { size: 24 },
-        },
         xaxis: {
             title: {
                 text: '',
