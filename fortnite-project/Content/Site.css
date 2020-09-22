@@ -329,3 +329,28 @@ hr {
 .kdr-color {
     color: #EF626C;
 }
+
+/* ---------- Login Page ---------- */
+
+#main-login{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#main-login h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 75px;
+    margin-top: 10vh;
+    color: white;
+    text-align: center;
+}
+
+.input-group mb-3{
+}
+
+#main-login .input-group-text {
+    background-color: #84DCCF;
+}
+
+#main-login input {
+    font-family: 'Montserrat', sans-serif;
+}
