@@ -350,8 +350,15 @@ hr {
         font-family: 'Russo One', sans-serif;
         font-size: 50px;
         margin-top: 10vh;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
         color: white;
+        text-align: center;
+    }
+
+    #main-login p {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        margin-bottom: 50px;
         text-align: center;
     }
 
@@ -388,13 +395,38 @@ hr {
 
 /* ---------- Register Page ---------- */
 
+#register {
+    background: url(../Content/images/login.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 94vh;
+}
+
+#register-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 15vh;
+    border-radius: 5px;
+    padding-bottom: 10vh;
+}
+
 #register-form h1 {
     font-family: 'Russo One', sans-serif;
     font-size: 50px;
     margin-top: 10vh;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     color: white;
     text-align: center;
+}
+
+    #register-form p {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+#register-form input{
+    font-family: 'Montserrat', sans-serif;
 }
 
 #register-button {
