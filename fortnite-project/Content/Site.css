@@ -108,6 +108,33 @@ canvas {
     font-weight: 300;
 }
 
+#username-input {
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    #username-input span {
+        background-color: black;
+        color: white;
+        border: none;
+    }
+
+#search-stats-display {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#username-input input{
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: solid 2px white;
+}
+
+#player-stats{
+    background-color: rgb(14, 14, 14);
+}
+
 #stats-jumbo {
     background-color: #312F2F;
     color: white;

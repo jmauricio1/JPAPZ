@@ -36,6 +36,7 @@ namespace fortnite_project.Controllers
 
         private string SendRequest(string uri)
         {
+            Debug.WriteLine("URI: " + uri);
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             /*            request.Headers.Add("Authorization", "token " + credentials);
                         request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required

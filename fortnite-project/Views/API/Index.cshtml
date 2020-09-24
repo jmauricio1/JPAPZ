@@ -14,23 +14,35 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
-                <div class="form-row">
+                <div class="form-row" id="username-input">
                     <div class="input-group input-group-sm col-lg-6 mx-auto mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"> Epic Username
+                            <span class="input-group-text">
+                                Epic Username
                             </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="Email" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="..." aria-describedby="basic-addon1" id="epic-username-input">
                     </div>
                 </div>
+                <br />
+                <button class="btn btn-primary" id="player-search-button">Search</button>
             </div>
             <div class="col-lg-1">
             </div>
         </div>
     </div>
 </section>
+<section class="row" id="search-stats-display">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div id="player-stats">
 
-<div class="container jumbotron" id="stats-jumbo">
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</section>
+
+@*<div class="container jumbotron" id="stats-jumbo">
     <div class="container">
         <div class="row">
             <div class="col-lg-4"></div>
@@ -53,7 +65,7 @@
 
         </div>
     </div>
-</div>
+</div>*@
 
 
 @section scripts{
