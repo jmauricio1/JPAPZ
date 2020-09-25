@@ -26,8 +26,16 @@ namespace fortnite_project.Controllers
             Debug.WriteLine("Something");
             Debug.WriteLine(data);
 
+            if ((string)data["error"] == "Player Not Found")
+            {
+                Debug.WriteLine("No data to display");
+                string temp = "No data to display";
+                return Json(temp, JsonRequestBehavior.AllowGet);
+            }
+
             PlayerStats playerStats = new PlayerStats();
             playerStats.username = username;
+            playerStats.wins = (int)data["lifeTimeStats"][8]["value"];
             playerStats.matches = (int)data["lifeTimeStats"][7]["value"];
             playerStats.elims = (int)data["lifeTimeStats"][10]["value"];
             playerStats.kd = Math.Round(((double)playerStats.elims / (double)playerStats.matches), 2);
@@ -60,6 +68,7 @@ namespace fortnite_project.Controllers
     public class PlayerStats
     {
         public string username;
+        public int wins;
         public int matches;
         public int elims;
         public double kd;

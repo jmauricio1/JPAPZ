@@ -119,6 +119,13 @@ canvas {
         border: none;
     }
 
+#does-not-exist{
+    color: red;
+    font-family: 'Russo one', sans-serif;
+    margin-top: 5vh;
+    text-align: center;
+}
+
 #search-stats-display {
     margin-left: 25px;
     margin-right: 25px;
@@ -133,28 +140,51 @@ canvas {
 
 #player-stats{
     background-color: rgb(14, 14, 14);
+    color: white;
+}
+
+#player-stats .row{
+    margin-top: 50px;
+}
+
+#player-stats h1 {
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 75px;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+    #player-stats h2 {
+        text-align: center;
+        font-family: 'Russo One', sans-serif;
+        font-size: 50px;
+        margin-bottom: 0;
+        line-height: 45px;
+    }
+
+#player-stats h3{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.middle-col {
+    border-left: solid 4px white;
+    border-right: solid 4px white;
+}
+
+.mid-col-left {
+    border-right: solid 2px white;
+}
+
+.mid-col-right {
+    border-left: solid 2px white;
 }
 
 #stats-jumbo {
     background-color: #312F2F;
     color: white;
-}
-
-.stat-number {
-    font-size: 50px;
-    font-weight: 600;
-}
-
-#elim-number {
-    color: #84DCCF;
-}
-
-#matches-number {
-    color: #F6E8EA;
-}
-
-#kd-number {
-    color: #EF626C;
 }
 
 .white-txt {
@@ -183,6 +213,7 @@ canvas {
         border-left: solid 4px #84DCCF;
         border-right: solid 4px #EF626C;
         font-weight: 300;
+        
     }
 
     #group-header .input-group-text {
