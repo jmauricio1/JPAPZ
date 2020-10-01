@@ -33,12 +33,46 @@ namespace fortnite_project.Controllers
                 return Json(temp, JsonRequestBehavior.AllowGet);
             }
 
+            int totalElims =
+                (int)data["stats"]["p2"]["kills"]["valueInt"] +
+                (int)data["stats"]["p10"]["kills"]["valueInt"] +
+                (int)data["stats"]["p9"]["kills"]["valueInt"];
+
+            int totalWins =
+                (int)data["stats"]["p2"]["top1"]["valueInt"] +
+                (int)data["stats"]["p10"]["top1"]["valueInt"] +
+                (int)data["stats"]["p9"]["top1"]["valueInt"];
+
+            int totalMatches =
+                (int)data["stats"]["p2"]["matches"]["valueInt"] +
+                (int)data["stats"]["p10"]["matches"]["valueInt"] +
+                (int)data["stats"]["p9"]["matches"]["valueInt"];
+
             PlayerStats playerStats = new PlayerStats();
+            playerStats.soloWins = (int)data["stats"]["p2"]["top1"]["valueInt"];
+            playerStats.soloTop10 = (int)data["stats"]["p2"]["top10"]["valueInt"];
+            playerStats.soloTop25 = (int)data["stats"]["p2"]["top25"]["valueInt"];
+            playerStats.soloMatches = (int)data["stats"]["p2"]["matches"]["valueInt"];
+            playerStats.soloElims = (int)data["stats"]["p2"]["kills"]["valueInt"];
+
+            playerStats.duoWins = (int)data["stats"]["p10"]["top1"]["valueInt"];
+            playerStats.duoTop5 = (int)data["stats"]["p10"]["top10"]["valueInt"];
+            playerStats.duoTop12 = (int)data["stats"]["p10"]["top25"]["valueInt"];
+            playerStats.duoMatches = (int)data["stats"]["p10"]["matches"]["valueInt"];
+            playerStats.duoElims = (int)data["stats"]["p10"]["kills"]["valueInt"];
+
+            playerStats.squadWins = (int)data["stats"]["p9"]["top1"]["valueInt"];
+            playerStats.squadsTop3 = (int)data["stats"]["p9"]["top10"]["valueInt"];
+            playerStats.squadsTop6 = (int)data["stats"]["p9"]["top25"]["valueInt"];
+            playerStats.squadsMatches = (int)data["stats"]["p9"]["matches"]["valueInt"];
+            playerStats.squadElims = (int)data["stats"]["p9"]["kills"]["valueInt"];
+
             playerStats.username = username;
-            playerStats.wins = (int)data["lifeTimeStats"][8]["value"];
-            playerStats.matches = (int)data["lifeTimeStats"][7]["value"];
-            playerStats.elims = (int)data["lifeTimeStats"][10]["value"];
+            playerStats.wins = playerStats.soloWins + playerStats.duoWins + playerStats.squadWins;//totalWins; /*(int)data["lifeTimeStats"][8]["value"];*/
+            playerStats.matches = totalMatches; /*(int)data["lifeTimeStats"][7]["value"];*/
+            playerStats.elims = totalElims; /*(int)data["lifeTimeStats"][10]["value"];*/
             playerStats.kd = Math.Round(((double)playerStats.elims / (double)playerStats.matches), 2);
+
             return Json(playerStats, JsonRequestBehavior.AllowGet);
         }
 
@@ -72,5 +106,26 @@ namespace fortnite_project.Controllers
         public int matches;
         public int elims;
         public double kd;
+
+        /* Solos Information*/
+        public int soloWins; //Solo Wins
+        public int soloTop10;
+        public int soloTop25;
+        public int soloMatches;
+        public int soloElims;
+
+        /* Duos Information*/
+        public int duoWins; //Duo Wins
+        public int duoTop5;
+        public int duoTop12;
+        public int duoMatches;
+        public int duoElims;
+
+        /* Squads Information*/
+        public int squadWins;
+        public int squadsTop3;
+        public int squadsTop6;
+        public int squadsMatches;
+        public int squadElims;
     }
 }

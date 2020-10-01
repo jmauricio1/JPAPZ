@@ -131,6 +131,10 @@ canvas {
     margin-right: 25px;
 }
 
+.stat-col {
+    background-color: rgb(7, 7, 7);
+}
+
 #username-input input{
     color: white;
     background-color: black;
@@ -139,13 +143,15 @@ canvas {
 }
 
 #player-stats{
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(7, 7, 7);
     color: white;
 }
 
-#player-stats .row{
-    margin-top: 50px;
-}
+    #player-stats .row {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        padding-bottom: 50px;
+    }
 
 #player-stats h1 {
     text-align: center;
@@ -189,6 +195,32 @@ canvas {
 
 .white-txt {
     color: white;
+}
+
+#more-stats {
+
+}
+
+#more-stats h4 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 75px;
+    color: white;
+    text-align: center;
+}
+
+#more-stats h5 {
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 0;
+    line-height: 45px;
+}
+
+#more-stats h6 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 50px;
 }
 
 /* ---------- Groups ---------- */

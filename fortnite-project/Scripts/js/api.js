@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+    $('#more-stats').hide();
+
     $("#player-search-button").click(function () {
 
         let name = $("#epic-username-input").val();
@@ -11,6 +13,8 @@
             success: displayPlayerStats
         });
     });
+
+    TestChart();
 });
 
 function displayPlayerStats(data) {
@@ -19,10 +23,25 @@ function displayPlayerStats(data) {
     if (data == "No data to display") {
         $("#player-stats").empty();
         $("#does-not-exist").append("Please enter a valid Epic username.");
+        $('#more-stats').hide();
     }
     else {
         $("#player-stats").empty();
         $("#does-not-exist").empty();
+        $('#more-stats').show();
+
+        $("#solo-wins-count").empty();
+        $("#solo-elim-count").empty();
+        $("#solo-matches-count").empty();
+        $("#solo-kd").empty();
+        $("#duo-wins-count").empty();
+        $("#duo-elim-count").empty();
+        $("#duo-matches-count").empty();
+        $("#duo-kd").empty();
+        $("#squad-wins-count").empty();
+        $("#squad-elim-count").empty();
+        $("#squad-matches-count").empty();
+        $("#squad-kd").empty();
 
         let username = document.createElement("h1");
         username.append(data["username"]);
@@ -88,5 +107,68 @@ function displayPlayerStats(data) {
 
         $("#player-stats").append(username);
         $("#player-stats").append(row);
+
+        $("#solo-wins-count").append(data["soloWins"]);
+        $("#solo-elim-count").append(data["soloElims"]);
+        $("#solo-matches-count").append(data["soloMatches"]);
+
+        let lump = (data["soloElims"] / data["soloMatches"]).toFixed(2);
+        $("#solo-kd").append(lump);
+
+        $("#duo-wins-count").append(data["duoWins"]);
+        $("#duo-elim-count").append(data["duoElims"]);
+        $("#duo-matches-count").append(data["duoMatches"]);
+
+        lump = (data["duoElims"] / data["duoMatches"]).toFixed(2);
+        $("#duo-kd").append(lump);
+
+        $("#squad-wins-count").append(data["squadWins"]);
+        $("#squad-elim-count").append(data["squadElims"]);
+        $("#squad-matches-count").append(data["squadsMatches"]);
+
+        lump = (data["squadElims"] / data["squadsMatches"]).toFixed(2);
+        $("#squad-kd").append(lump);
     }
+}
+
+function TestChart() {
+    var Chart = require('chart.js');
+
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 }
